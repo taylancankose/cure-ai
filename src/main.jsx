@@ -7,20 +7,19 @@ import { PrivyProvider } from "@privy-io/react-auth";
 import App from "./App";
 import "./index.css";
 
-const root = ReactDOM.createRoute(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <PrivyProvider
-    appId=""
+    appId="clzsak050042q9xj9zqkudwm9"
     config={{
-      loginMethods: ["email", "wallet"],
       appearance: {
-        theme: "light",
-        accentColor: "#676fff",
-        logo: "",
+        theme: "dark",
       },
     }}
   >
-    <App />
+    <Router>
+      <App />
+    </Router>
   </PrivyProvider>,
 );

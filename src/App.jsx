@@ -3,6 +3,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         {/* Navbar */}
         <Navbar />
         <Routes>
-          <Route path="/" element={Home} />
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
     </div>

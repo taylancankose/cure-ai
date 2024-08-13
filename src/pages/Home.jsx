@@ -1,7 +1,8 @@
 import React from "react";
+import DisplayInfo from "../components/DisplayInfo";
 
 function Home() {
-  return <div>Home</div>;
+  return <DisplayInfo />;
 }
 
 export default Home;

@@ -7,6 +7,9 @@ import { PrivyProvider } from "@privy-io/react-auth";
 import App from "./App";
 import "./index.css";
 import { StateContextProvider } from "./context";
+import { Buffer } from "buffer";
+
+window.Buffer = Buffer;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <PrivyProvider

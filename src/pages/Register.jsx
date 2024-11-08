@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { usePrivy } from "@privy-io/react-auth";
+import { useStateContext } from "../context";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -8,27 +9,25 @@ const Register = () => {
   const [location, setLocation] = useState("");
   const [gender, setGender] = useState("");
 
+  const { createUser } = useStateContext();
+
   const navigate = useNavigate();
   const { user } = usePrivy();
-
-  console.log(user);
   const handleRegister = async (e) => {
     e.preventDefault();
+
     const userData = {
       username,
       age: parseInt(age, 10),
       location,
-      folders: [],
-      treatmentCounts: 0,
-      folder: [],
       createdBy: user.email.address,
     };
 
-    console.log(userData);
-    // const newUser = await createUser(userData);
-    // if (newUser) {
-    //   navigate("/profile");
-    // }
+    const newUser = await createUser(userData);
+
+    if (newUser) {
+      navigate("/profile");
+    }
   };
 
   return (

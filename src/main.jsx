@@ -10,7 +10,7 @@ import { StateContextProvider } from "./context";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <PrivyProvider
-    appId="clzsak050042q9xj9zqkudwm9"
+    appId={import.meta.env.VITE_PRIVY_APP_ID}
     config={{
       appearance: {
         theme: "dark",

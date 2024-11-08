@@ -11,9 +11,6 @@ import FileUploadModal from "./components/FileUploadModal";
 import RecordDetailsHeader from "./components/RecordDetailsHeader";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const geminiApiKey = "AIzaSyDCIQYrCMtiSucPQhh35bbOWlmUxnPbB_Y";
-console.log(geminiApiKey);
-
 function SingleRecordDetails() {
   const { state } = useLocation();
   const navigate = useNavigate();
@@ -59,7 +56,7 @@ function SingleRecordDetails() {
     setUploading(true);
     setUploadSuccess(false);
 
-    const genAI = new GoogleGenerativeAI(geminiApiKey);
+    const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
     try {
       const base64Data = await readFileAsBase64(file);
@@ -104,7 +101,7 @@ function SingleRecordDetails() {
   const processTreatmentPlan = async () => {
     setIsProcessing(true);
 
-    const genAI = new GoogleGenerativeAI(geminiApiKey);
+    const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 

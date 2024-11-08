@@ -1,11 +1,12 @@
 {
-  "name": "client",
+  "name": "cure-ai",
   "private": true,
   "version": "0.0.0",
-  "jsx": "react-jsx",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "yarn build && npx thirdweb@latest upload dist",
     "db:push": "drizzle-kit push",
@@ -39,15 +40,21 @@
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^2.2.0",
-    "autoprefixer": "^10.4.13",
+    "@eslint/js": "^9.13.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
     "drizzle-kit": "^0.23.0",
-    "postcss": "^8.4.19",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
-    "tailwindcss": "^3.2.4",
-    "vite": "^3.2.11"
-  },
-  "main": "index.js",
-  "license": "MIT"
+    "tailwindcss": "^3.4.14",
+    "vite": "^5.4.10"
+  }
 }

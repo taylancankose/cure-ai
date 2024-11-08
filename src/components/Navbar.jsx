@@ -35,20 +35,17 @@ const Navbar = () => {
     if (authenticated && user) {
       fetchUserInfo();
     }
-  }, [authenticated, user]);
+  }, [authenticated, user, fetchUserInfo]);
 
-  const handleLoginLogout = useCallback(async () => {
-    try {
-      if (authenticated) {
-        logout();
-      } else {
-        await login();
+  const handleLoginLogout = useCallback(() => {
+    if (authenticated) {
+      logout();
+    } else {
+      login().then(() => {
         if (user) {
           fetchUserInfo();
         }
-      }
-    } catch (error) {
-      console.error("Login/Logout error:", error);
+      });
     }
   }, [authenticated, login, logout, user, fetchUserInfo]);
 

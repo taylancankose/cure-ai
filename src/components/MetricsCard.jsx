@@ -1,14 +1,7 @@
 import React from "react";
 import { IconChevronRight } from "@tabler/icons-react";
 
-const MetricsCard = ({
-  title,
-  subtitle,
-  value,
-  icon: Icon,
-  progress,
-  onClick,
-}) => (
+const MetricsCard = ({ title, subtitle, value, icon: Icon }) => (
   <div className="flex flex-col rounded-xl border bg-white shadow-sm dark:border-neutral-800 dark:bg-[#13131a]">
     <div className="flex justify-between gap-x-3 p-4 md:p-5">
       <div>
@@ -28,7 +21,6 @@ const MetricsCard = ({
     <a
       className="inline-flex items-center justify-between rounded-b-xl border-t border-gray-200 px-4 py-3 text-sm text-gray-600 hover:bg-gray-50 md:px-5 dark:border-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-800"
       href="#"
-      onClick={onClick}
     >
       {subtitle}
       <IconChevronRight />

@@ -35,7 +35,7 @@ const Navbar = () => {
     if (authenticated && user) {
       fetchUserInfo();
     }
-  }, [authenticated, user, fetchUserInfo]);
+  }, [authenticated, user]);
 
   const handleLoginLogout = useCallback(() => {
     if (authenticated) {
